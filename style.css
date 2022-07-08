@@ -28,6 +28,8 @@ body {
 
 .maincontainer {
   position: absolute;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
