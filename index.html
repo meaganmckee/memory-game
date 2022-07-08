@@ -5,9 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
     <title>Plant Memory Game</title>
   </head>
+  <header>
+    <h1>Plant-emonium</h1>
+    <p>A Plant Memory Game</p>
+  </header>
   <body>
+    <main>
+      <div class="card-container">
+        <div class="card one">
+          <img
+            src="assets/card-back.svg"
+            height="130px"
+            width="100px"
+            alt="back of card"
+            id="front"
+          />
+        </div>
+        <div class="card one">
+          <img
+            src="assets/card-plant1.svg"
+            height="130px"
+            width="100px"
+            alt="front of card"
+            id="back"
+          />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="timer"></div>
+      <div>
+        <button>Reset</button>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
