@@ -1,17 +1,30 @@
 "use strict";
 
 const card = document.querySelectorAll(".card");
-console.log(card);
-// for (let i = 0; i < 12; i++) {
-//   card[i].addEventListener("click", flipCard);
-//   function flipCard() {
-//     card[i].classList.toggle("flipCard");
-//   }
-// }
+let cardArray = [];
+
 const flipCard = (e) => {
   console.dir(e.target.parentNode.parentNode);
-  if (e.target.parentNode.parentNode.classList.contains("card")) {
+  if (
+    e.target.parentNode.parentNode.classList.contains("card") &&
+    cardArray.length <= 1
+  ) {
     e.target.parentNode.parentNode.classList.toggle("flipCard");
+    cardArray.push(e.target.parentNode.parentNode);
+    console.log(cardArray);
+    if (cardArray.length === 2) {
+      if (
+        cardArray[0].getAttribute("data-plant") ===
+        cardArray[1].getAttribute("data-plant")
+      ) {
+        console.log("they're a match");
+        cardArray = [];
+      } else {
+        console.log("they're not a match");
+        cardArray = [];
+        flipCard();
+      }
+    }
   }
 };
 
@@ -42,5 +55,3 @@ reset.addEventListener("click", () => {
   clearInterval(timer);
   startTimer();
 });
-
-const checkMatch = () => {};
