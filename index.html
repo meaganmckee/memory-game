@@ -19,6 +19,17 @@
       <p>A Plant Memory Game</p>
     </header>
     <main>
+      <audio controls autoplay loop>
+        <source
+          id="menuAudio"
+          src="assets/your-love-is-what-i-need-soundroll-main-version-12292-03-37.mp3"
+        />
+        <embed
+          src="assets/your-love-is-what-i-need-soundroll-main-version-12292-03-37.mp3"
+          autoplay="autoplay"
+          loop="loop"
+        />
+      </audio>
       <div class="maincontainer">
         <div class="card" data-plant="pothos">
           <div class="front">
@@ -117,9 +128,30 @@
           </div>
         </div>
       </div>
+      <!-- modal code -->
+      <div class="modal">
+        <section class="modal-content">
+          <!-- to close modal -->
+          <span class="close">&times;</span>
+
+          <h2>Plant-emonium!</h2>
+          <p>
+            Finally some house plants you can’t kill! Test your knowledge and
+            memory with our calming plant matching game. Grab a cup of tea, your
+            comfiest pair of sweats and settle in with your new favorite after
+            work wind down activity. Ready? Okay, bloomer!
+          </p>
+          <h6>
+            Music from Uppbeat (free for Creators!):
+            https://uppbeat.io/t/soundroll/your-love-is-what-i-need License
+            code: MHMLLEDCINQWKGSE
+          </h6>
+        </section>
+      </div>
     </main>
     <footer>
       <button class="start">Start</button>
+      <button class="modal-trigger">Learn More</button>
       <div class="button-container">
         <button class="reset">Reset</button>
       </div>
