@@ -4,18 +4,29 @@ const card = document.querySelectorAll(".card");
 const mainContainer = document.querySelector(".maincontainer");
 const start = document.querySelector(".start");
 const reset = document.querySelector(".reset");
+const modal = document.querySelector(".modal");
 const winStatement = document.querySelector(".win-statement");
+const winModal = document.querySelector(".win-modal");
+const btn = document.querySelector(".modal-trigger");
+var span = document.getElementsByClassName("close")[0];
+
 let cardArray = [];
 let matchCounter = 0;
 let time = 60;
 let timer = null;
 
+// function stopWatch() {
+//   if (matchCounter === 1) {
+//     clearInterval(timer);
+//   }
+// }
+
 const startTimer = () => {
-  time = 0;
+  time = 60;
   timer = setInterval(() => {
     start.innerHTML = time;
-    time++;
-    if (time === 61) {
+    time--;
+    if (time === 0) {
       clearInterval(timer);
     }
   }, 1000);
@@ -50,7 +61,13 @@ const flipCard = (e) => {
           card.style.borderColor = "#e6dcd0";
         });
         matchCounter++;
+        console.log(matchCounter);
         cardArray = [];
+        if (matchCounter === 1) {
+          clearInterval(timer);
+          winModal.style.display = "block";
+          winStatement.innerHTML = `Congrats! It took you ${time} to finish the game!`;
+        }
       } else {
         setTimeout(() => {
           cardArray.forEach((card) => card.classList.toggle("flipCard"));
@@ -78,14 +95,10 @@ reset.addEventListener("click", () => {
 
 // modal code
 // Get the modal
-const modal = document.querySelector(".modal");
-const winModal = document.querySelector(".win-modal");
 
 // Get the button that opens the modal
-const btn = document.querySelector(".modal-trigger");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {
@@ -103,10 +116,6 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-// matchCounter.valueOf(1) = () {
-// clearInterval(timer);
-// winModal.style.display = "block";
-// winStatement.innerHTML = `Congrats! It took you ${time} to finish the game!`
 
 // };
 // function = (e) {

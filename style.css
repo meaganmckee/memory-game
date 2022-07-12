@@ -18,6 +18,8 @@ header {
   color: white;
   padding: 10px;
   text-align: center;
+  background-image: url(assets/header-background.svg);
+  /* background-repeat: no-repeat; */
 }
 
 header p {
@@ -44,7 +46,6 @@ main {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-
   align-items: center;
   justify-content: space-evenly;
 }
@@ -58,6 +59,7 @@ main {
   position: relative;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
+  cursor: pointer;
 }
 
 img {
@@ -80,27 +82,28 @@ img {
   position: absolute;
   backface-visibility: hidden;
   transform: rotateY(180deg);
+  background-color: #eee;
 }
 
 .flipCard {
   transform: rotateY(180deg);
 }
 
-footer {
-  background-color: #5a8f7e;
-  padding: 12px;
-  bottom: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
 button {
-  margin-right: 50px;
+  /* margin-right: 50px; */
   background-color: #003d2a;
   color: white;
-  border: solid 1px white;
+  border: solid 2px white;
   padding: 10px;
-  border-radius: 25%;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #edbf85;
 }
 
 .timer {
@@ -166,6 +169,14 @@ button {
 
 .win-modal {
   background-color: pink;
+}
+
+footer {
+  background-color: #5a8f7e;
+  padding: 12px;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media only screen and (min-width: 760px) {
