@@ -9,6 +9,7 @@ const winStatement = document.querySelector(".win-statement");
 const winModal = document.querySelector(".win-modal");
 const btn = document.querySelector(".modal-trigger");
 const span = document.getElementsByClassName("close")[0];
+const winClose = document.querySelector(".win-close");
 
 let cardArray = [];
 let matchCounter = 0;
@@ -63,15 +64,16 @@ const flipCard = (e) => {
         matchCounter++;
         console.log(matchCounter);
         cardArray = [];
-        if (matchCounter === 1) {
+        if (matchCounter === 6) {
           clearInterval(timer);
           winModal.style.display = "block";
           winStatement.textContent = `Congrats! It took you ${
             59 - time
           } seconds to finish the game!`;
-          span.onclick = function () {
-            winModal.style.display = "none";
-          };
+          // span.onclick = function () {
+          //   winModal.style.display = "none";
+          //   console.log("zebra");
+          // };
         }
       } else {
         setTimeout(() => {
@@ -82,6 +84,10 @@ const flipCard = (e) => {
     }
   }
 };
+
+winClose.addEventListener("click", () => {
+  winModal.style.display = "none";
+});
 
 // window.onclick = function (event) {
 //   if (event.target == winModal) {

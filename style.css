@@ -184,12 +184,12 @@ button:hover {
   font-weight: bold;
 }
 
-#win-close {
+.win-close {
   color: #fff;
   float: right;
   top: 0;
+  cursor: pointer;
   font-size: 28px;
-  font-weight: bold;
 }
 
 .close:hover,
