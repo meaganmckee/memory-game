@@ -3,6 +3,18 @@
 const card = document.querySelectorAll(".card");
 let cardArray = [];
 
+card.forEach((card) => {
+  let ramdomPos = Math.floor(Math.random() * 12);
+  card.style.order = ramdomPos;
+});
+
+function shuffle() {
+  card.forEach((card) => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+}
+
 const flipCard = (e) => {
   console.dir(e.target.parentNode.parentNode);
   if (
@@ -58,6 +70,7 @@ start.addEventListener("click", () => {
 
 reset.addEventListener("click", () => {
   clearInterval(timer);
+  shuffle();
   startTimer();
 });
 
