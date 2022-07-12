@@ -5,6 +5,7 @@ h1 {
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: #e6dcd0;
   display: flex;
@@ -30,9 +31,11 @@ h1 {
   font-size: 34pt;
   margin-bottom: 7px;
 }
+
 audio {
   display: none;
 }
+
 main {
   flex: 1;
 }
@@ -140,6 +143,7 @@ button {
   font-weight: lighter;
   margin: 0;
 }
+
 .close {
   color: #aaa;
   float: right;
@@ -154,17 +158,22 @@ button {
   text-decoration: none;
   cursor: pointer;
 }
+
 .modal h6 {
   font-style: italic;
   font-weight: lighter;
 }
+
 @media only screen and (min-width: 760px) {
   .card {
     width: 23%;
-    height: 32%;
+    height: 30%;
     margin: 5px;
   }
+
   .modal-content {
     width: 25%;
   }
-} ;
+}
+
+;

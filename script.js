@@ -17,12 +17,17 @@ const flipCard = (e) => {
         cardArray[0].getAttribute("data-plant") ===
         cardArray[1].getAttribute("data-plant")
       ) {
-        console.log("they're a match");
+        cardArray.forEach((card) => {
+          card.children[1].style.display = "none";
+          card.style.borderColor = "#e6dcd0";
+        });
 
         cardArray = [];
       } else {
-        console.log("they're not a match");
-        cardArray = [];
+        setTimeout(() => {
+          cardArray.forEach((card) => card.classList.toggle("flipCard"));
+          cardArray = [];
+        }, 1000);
       }
     }
   }
