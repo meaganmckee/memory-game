@@ -164,6 +164,10 @@ button {
   font-weight: lighter;
 }
 
+.win-modal {
+  background-color: pink;
+}
+
 @media only screen and (min-width: 760px) {
   .card {
     width: 23%;
@@ -174,6 +178,4 @@ button {
   .modal-content {
     width: 25%;
   }
-}
-
-;
+} ;
