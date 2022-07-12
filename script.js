@@ -3,6 +3,16 @@
 const card = document.querySelectorAll(".card");
 let cardArray = [];
 
+function shuffle() {
+  card.forEach((card) => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+    card.children[1].style.display = "initial";
+    card.style.borderColor = "white";
+    card.classList.remove("flipCard");
+  });
+}
+
 const flipCard = (e) => {
   console.dir(e.target.parentNode.parentNode);
   if (
@@ -53,13 +63,17 @@ const startTimer = () => {
 };
 
 start.addEventListener("click", () => {
+  shuffle();
   startTimer();
 });
 
 reset.addEventListener("click", () => {
   clearInterval(timer);
+  shuffle();
   startTimer();
 });
+
+const playerWins = () => {};
 
 // modal code
 // Get the modal
