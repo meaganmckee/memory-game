@@ -8,7 +8,7 @@ const modal = document.querySelector(".modal");
 const winStatement = document.querySelector(".win-statement");
 const winModal = document.querySelector(".win-modal");
 const btn = document.querySelector(".modal-trigger");
-var span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];
 
 let cardArray = [];
 let matchCounter = 0;
@@ -66,7 +66,12 @@ const flipCard = (e) => {
         if (matchCounter === 1) {
           clearInterval(timer);
           winModal.style.display = "block";
-          winStatement.innerHTML = `Congrats! It took you ${time} to finish the game!`;
+          winStatement.textContent = `Congrats! It took you ${
+            59 - time
+          } seconds to finish the game!`;
+          span.onclick = function () {
+            winModal.style.display = "none";
+          };
         }
       } else {
         setTimeout(() => {
@@ -77,6 +82,24 @@ const flipCard = (e) => {
     }
   }
 };
+
+// window.onclick = function (event) {
+//   if (event.target == winModal) {
+//     winModal.style.display = "none";
+//   }
+// };
+
+// const toggleHide = () => {
+//   winModal.classList.toggle("hide");
+// }; // naming the toggle function
+
+// winModal.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("modal")) {
+//     toggleHide();
+//   } // hides the modal if you click off it
+// });
+
+// winModal.addEventListener("click", toggleHide);
 
 mainContainer.addEventListener("click", flipCard);
 
